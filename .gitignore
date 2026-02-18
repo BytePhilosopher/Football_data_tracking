@@ -1,0 +1,13 @@
+# Data
+data/
+*.mp4
+*.jpg
+*.png
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
