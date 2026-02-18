@@ -7,7 +7,7 @@ To reproduce preprocessing:
 python src/pipeline.py
 
 Output structure:
-football_tracking/
+```football_tracking/
 │
 ├── data/
 │   ├── raw/
@@ -25,7 +25,7 @@ football_tracking/
 │   ├── blur_filter.py
 │   └── pipeline.py
 │
-└── requirements.txt
+└── requirements.txt ```
 
 
 ## Dataset preprocessing
