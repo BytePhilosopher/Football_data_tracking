@@ -2,6 +2,8 @@ import os
 import subprocess
 from normalize import validate_video
 
+# Trimming removes irrelevant parts of the video to reduce noise and computational cost
+# while keeping only meaningful football actions
 def trim_video(input_path, output_path, start_sec, end_sec):
 
     info = validate_video(input_path)

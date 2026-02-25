@@ -25,7 +25,7 @@ Output structure:
 │   ├── blur_filter.py
 │   └── pipeline.py
 │
-└── requirements.txt ```
+└── requirements.txt
 
 
 ## Dataset preprocessing

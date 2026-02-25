@@ -2,6 +2,8 @@ import os
 import subprocess
 import cv2
 
+# Normalization scales all pixel values into a consistent range 
+# so the neural network can learn efficiently and converge faster.
 def validate_video(video_path):
     cap = cv2.VideoCapture(video_path)
 
