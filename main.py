@@ -7,8 +7,8 @@ from src.tracker import Tracker
 from src.metadata import MetadataLogger
 from src.utils import draw_boxes
 
-RAW_VIDEO = "data/raw/kaggle/168.mp4"
-PROCESSED_VIDEO = "data/processed/168_processeded.mp4"
+RAW_VIDEO = "data/raw/168.mp4"
+PROCESSED_VIDEO = "data/processed/168_processed.mp4"
 MODEL_PATH = "yolov8m.pt"
 
 # Step 1: Preprocess

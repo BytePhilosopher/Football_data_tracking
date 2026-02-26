@@ -21,7 +21,7 @@ def preprocess_video(input_path, output_path, target_fps=15, resize_width=1280):
     new_height = int(height * scale)
 
     # macOS-friendly codec
-    fourcc = cv2.VideoWriter_fourcc(*'avc1')  # H.264
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # H.264
     out = cv2.VideoWriter(output_path, fourcc, target_fps, (resize_width, new_height))
 
     if not out.isOpened():
