@@ -1,23 +1,15 @@
 # src/detector.py
 from ultralytics import YOLO
+import numpy as np
+
+from ultralytics import YOLO
+import numpy as np
 
 class Detector:
-    def __init__(self, model_path):
+    def __init__(self, model_path, conf=0.4):
         self.model = YOLO(model_path)
+        self.conf = conf
 
     def detect(self, frame):
-        results = self.model(frame)[0]
-
-        boxes = results.boxes.xyxy.cpu().numpy()
-        scores = results.boxes.conf.cpu().numpy()
-        classes = results.boxes.cls.cpu().numpy()
-
-        detections = []
-        for box, score, cls in zip(boxes, scores, classes):
-            detections.append({
-                "bbox": box,
-                "score": float(score),
-                "class": int(cls)
-            })
-
-        return detections
+        results = self.model(frame, conf=self.conf)[0] # results is an ultralytics.engine.results.Results object
+        return results.boxes # This is an ultralytics.engine.results.Boxes object

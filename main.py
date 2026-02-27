@@ -17,7 +17,7 @@ preprocess_video(RAW_VIDEO, PROCESSED_VIDEO)
 # Step 2: Load modules
 detector = Detector(MODEL_PATH)
 tracker = Tracker()
-logger = MetadataLogger("data/annotations/tracking.csv")
+logger = MetadataLogger("data/annotations")
 
 cap = cv2.VideoCapture(PROCESSED_VIDEO)
 
@@ -37,7 +37,7 @@ while True:
         break
 
     detections = detector.detect(frame)
-    tracked = tracker.update(detections)
+    tracked = tracker.update(detections if detections else None)
 
     logger.log(frame_id, tracked)
 
@@ -48,4 +48,4 @@ while True:
 
 cap.release()
 out.release()
-logger.close()
+logger.save()
